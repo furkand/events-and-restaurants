@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react"
 import Typist from "react-typist"
-import AboutUs from "../components/atoms"
+import AboutUs from "../components/atoms/about-us"
 
 const HomePage = ({}) => {
     const [loopCounter,setLoopCounter] = useState(1)

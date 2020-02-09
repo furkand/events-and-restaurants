@@ -1,0 +1,36 @@
+@import './variables';
+
+@mixin fullScreen(){
+  width: $fullWidth;
+  height: $fullHeight;
+  box-sizing: border-box;
+}
+
+@mixin defaultButton(){
+  padding-right: 15px;
+  padding-left:15px;
+  padding-top:10px;
+  padding-bottom:10px;
+  color: $white;
+  border: 1px solid $white;
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+.first-section{
+  @include fullScreen();
+  background-color: $navyBlueOne;
+  color: $white;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 60%;
+  display: table-cell;
+  button{
+    @include defaultButton()
+  }
+  .typist-container{
+    height: 100px;
+    width: 100%;
+    display: block;
+  }
+}
