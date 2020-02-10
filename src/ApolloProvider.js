@@ -11,12 +11,11 @@ import React from "react"
  })
 
  const authLink = setContext( (_,{headers})=> {
-    const token = process.env.TOKEN
    return {
        headers: {
            ...headers,
         'Content-Type' : 'application/graphql',
-        "Authorization" :`Bearer ${token}`
+        "Authorization" :`Bearer ${process.env.TOKEN}`
        }
    }
 })
