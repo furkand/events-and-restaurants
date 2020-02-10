@@ -2,9 +2,17 @@ import React from 'react';
 import './styles/App.scss';
 import HomePage from "./pages/home-page"
 import {Switch,BrowserRouter, Route} from "react-router-dom"
+import gql from "graphql-tag"
+import {useQuery} from "@apollo/react-hooks"
 
 
 function App() {
+  const query = useQuery(FETCH_EVENTS_QUERY)
+  if(query.data){
+    console.log(query.data)
+  }else{
+    console.log(query.error)
+  }
   return (
     <div className="App">
       <BrowserRouter>
@@ -15,5 +23,13 @@ function App() {
     </div>
   );
 }
-
+const FETCH_EVENTS_QUERY = gql`
+  {
+	event_search(limit:20){
+    events{
+      name
+    }
+  }
+}
+`
 export default App;

@@ -16,7 +16,7 @@ const HomePage = ({}) => {
             <div className="typist-container">
                 { loopCounter ? (<Typist onTypingDone={()=>setLoopCounter(0)} avgTypingDelay={100}>
                 There are lots of good restaurants and events lets find the best one and join them!
-                </Typist>) : (<div></div>)}
+                </Typist>) : (<div> </div>)}
             </div>
             <button className="action"> More Information</button>
             </div>
