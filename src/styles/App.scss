@@ -80,8 +80,8 @@ body, a, button, div, h1,h2,h3,h4 , p, li, ul {
   
   #menuToggle span
   {
+    width: 10px;
     display: flex;
-    width: 29px;
     height: 2px;
     margin-bottom: 5px;
     position: relative;
@@ -91,17 +91,23 @@ body, a, button, div, h1,h2,h3,h4 , p, li, ul {
     transform-origin: 5px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
+                opacity 0.55s ease,
+                width 0.55s ease
+                ;
   }
   
   #menuToggle span:first-child
   {
     transform-origin: 0% 0%;
   }
+  #menuToggle span:nth-child(2){
+    width: 30px;
+  }
   
   #menuToggle span:nth-last-child(2)
   {
     transform-origin: 0% 100%;
+    width: 20px;
   }
   
   #menuToggle input:checked ~ span
@@ -109,17 +115,20 @@ body, a, button, div, h1,h2,h3,h4 , p, li, ul {
     opacity: 1;
     transform: rotate(45deg) translate(-3px, -1px);
     background: $white;
+    width: 29px;
 
   }
   #menuToggle input:checked ~ span:nth-last-child(3)
   {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
+    width: 29px;
   }
   
   #menuToggle input:checked ~ span:nth-last-child(2)
   {
     transform: rotate(-45deg) translate(0, -1px);
+    width: 29px;
   }
   
   #menu
