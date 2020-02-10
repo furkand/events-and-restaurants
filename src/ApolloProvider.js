@@ -10,11 +10,13 @@ import React from "react"
      uri: "https://api.yelp.com/v3/graphql" 
  })
 
- const authLink = setContext( ()=> {
-    const token = "ZIQXoaTQBCriLZ69oUbbM9EKJiFvInXgauFPdPoB8ssLcZnX0mQmg9fUM7zqHrHvW3QxCU6ztQAwJxXIHuMvbHjv2XgWuZ5PfKG2jNPA94mnG3KC8E4kvA8cOBxAXnYx"
+ const authLink = setContext( (_,{headers})=> {
+    const token = process.env.TOKEN
    return {
        headers: {
-           Authorization :`Bearer ${token}`
+           ...headers,
+        'Content-Type' : 'application/graphql',
+        "Authorization" :`Bearer ${token}`
        }
    }
 })
