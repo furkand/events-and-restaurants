@@ -7,15 +7,14 @@ import React from "react"
  import {setContext} from 'apollo-link-context'
 
  const httplink = createHttpLink({
-     uri: "'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql'" 
+     uri: "https://graphql.anilist.co" 
  })
 
- const authLink = setContext( (_,{headers})=> {
+ const authLink = setContext( ()=> {
    return {
        headers: {
-           ...headers,
-        'Content-Type' : 'application/graphql',
-        "Authorization" :`Bearer ${process.env.TOKEN}`
+        "Content-Type" : "application/json",
+        "Accept" : "application/json"
        }
    }
 })

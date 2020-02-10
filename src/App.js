@@ -25,11 +25,16 @@ function App() {
 }
 const FETCH_EVENTS_QUERY = gql`
   {
-	event_search(limit:20){
-    events{
-      name
+  Media(isAdult:true){
+    description
+    coverImage {
+      extraLarge
+      large
+      medium
+      color
     }
   }
 }
+
 `
 export default App;
